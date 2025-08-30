@@ -6,7 +6,7 @@ namespace AppBlazor.Entities
     {
         [Required (ErrorMessage="El id es requerido")]
         [Range(1, int.MaxValue, ErrorMessage ="El valor debe ser un numero positivo")]
-        public int idLibro { get; set; }
+        public int idlibro { get; set; }
         [Required (ErrorMessage = "El titulo es requerido")]
         [MaxLength (100, ErrorMessage = "La longitud maxima es 100 caracteres")]
         public string titulo { get; set; } = string.Empty;
@@ -14,9 +14,6 @@ namespace AppBlazor.Entities
         [MinLength(20, ErrorMessage = "La longitud minima es 20 caracteres")]
 
         public string resumen { get; set; } = null!;
-
-
-        public int NroHojas {  get; set; }
 
     }
 }

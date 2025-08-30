@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBlazor.Client", "AppBlaz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBlazor.Entities", "AppBlazor.Entities\AppBlazor.Entities.csproj", "{E9A60442-C0D4-4670-A812-6C9CF95228FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBlazor.test", "AppBlazor.test\AppBlazor.test.csproj", "{B0A1D4A2-65C6-4659-91BE-7FDE2C300082}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBlazor.Test", "AppBlazor.test\AppBlazor.Test.csproj", "{B0A1D4A2-65C6-4659-91BE-7FDE2C300082}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

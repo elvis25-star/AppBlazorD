@@ -27,7 +27,7 @@ namespace AppBlazor.test
         {
             var libro = new LibroFormCLS
             {
-                idLibro = 1,
+                idlibro = 1,
                 titulo = "Libro de Prueba",
                 resumen = "Es un resumen del libro de prueba."
             };

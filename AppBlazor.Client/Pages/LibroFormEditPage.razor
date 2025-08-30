@@ -1,0 +1,8 @@
+﻿@page "/formLibro/edit/{idlibro:int}"
+<h3>Editar libro</h3>
+<FormLibro idlibro="@idlibro"/>
+
+@code {
+    [Parameter]
+    public int idlibro{ get; set; }
+}
