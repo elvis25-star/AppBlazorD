@@ -11,8 +11,8 @@ namespace AppBlazor.Client.Services
         public LibroService()
         {
             lista=new List<LibroListCLS>();
-            lista.Add(new LibroListCLS { idlibro = 1, titulo = "Libro 1" });
-            lista.Add(new LibroListCLS { idlibro = 2, titulo = "Libro 2" });
+            lista.Add(new LibroListCLS { idlibro = 1, titulo = "Libro 1" ,tipoLibro="Cuento"});
+            lista.Add(new LibroListCLS { idlibro = 2, titulo = "Libro 2", tipoLibro = "Novela"});
         }
         public List<LibroListCLS> listarLibros()
         {
@@ -30,7 +30,9 @@ namespace AppBlazor.Client.Services
             lista.Add(new LibroListCLS
             {
                 idlibro = libro.idlibro,
-                titulo = libro.titulo
+                titulo = libro.titulo,
+                resumen=libro.resumen,
+                tipoLibro=libro.tipoLibro
             });
         }
 
@@ -40,6 +42,8 @@ namespace AppBlazor.Client.Services
             if(existente != null)
             {
                 existente.titulo = libro.titulo;
+                existente.resumen = libro.resumen;
+                existente.tipoLibro = libro.tipoLibro;
             }
         }
         
@@ -52,10 +56,17 @@ namespace AppBlazor.Client.Services
                 {
                     idlibro = existente.idlibro,
                     titulo = existente.titulo,
-                    resumen = ""
+                    resumen = existente.resumen,
+                    tipoLibro = existente.tipoLibro
                 };
             }
             return new LibroFormCLS();
+        }
+        public int ObtenerSiguienteId()
+        {
+            if(lista.Count == 0) 
+                return 1;
+            return lista.Max(p => p.idlibro)+1;
         }
         
     }

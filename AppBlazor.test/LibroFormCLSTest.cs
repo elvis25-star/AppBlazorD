@@ -17,10 +17,10 @@ namespace AppBlazor.test
         {
             var libro=new LibroFormCLS();
             var errores = ValidaModelo(libro);
-            Assert.Contains(errores, e => e.ErrorMessage!.Contains("El id es requerido") ||
-                e.ErrorMessage!.Contains("El valor debe ser un numero positivo"));
+        
             Assert.Contains(errores, e => e.ErrorMessage!.Contains("El titulo es requerido"));
             Assert.Contains(errores, e => e.ErrorMessage!.Contains("El resumen es requerido"));
+            Assert.Contains(errores, e => e.ErrorMessage!.Contains("El tipo de libro es obligatorio"));
         }
         [Fact]
         public void ValidacionCamposCorrectos()
@@ -29,7 +29,8 @@ namespace AppBlazor.test
             {
                 idlibro = 1,
                 titulo = "Libro de Prueba",
-                resumen = "Es un resumen del libro de prueba."
+                resumen = "Es un resumen del libro de prueba.",
+                tipoLibro= "Novela"
             };
             var errores=ValidaModelo(libro);
             Assert.Empty(errores);

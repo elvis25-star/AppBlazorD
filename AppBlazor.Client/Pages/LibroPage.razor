@@ -1,24 +1,29 @@
 ﻿@page "/libro"
 @inject NavigationManager navigationManager
 @inject LibroService libroService
-<h3>LibroPage</h3>
+<h3>Página principal de Libros</h3>
 
-<button @onclick="navegar" class="btn btn-primary">Navegar a Libro Form Page</button>
+<button @onclick="navegar" class="btn btn-primary">Registrar libros</button>
 @if(lista !=null && lista.Count != 0)
 {
 	<table class="table">
 		<thead>
 			<tr>
+				<td>Imagen</td>
 				<th>Id</th>
 				<th>Titulo</th>
+				<th>Tipo de libro</th>
+				<th>Operaciones</th>
 			</tr>
 		</thead>
 		<tbody>
 			@foreach(var item in lista)
 			{
 				<tr>
+					<td><img width="50" height="50" src=@item.imagen/></td>
 					<td>@item.idlibro</td>
 					<td>@item.titulo</td>
+					<td>@item.tipoLibro</td>
 					<td>
 						<button class="btn btn-primary" @onclick="(()=>recuperarLibro(item.idlibro))">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">

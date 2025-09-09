@@ -12,8 +12,8 @@ namespace AppBlazor.Entities
         public string titulo { get; set; } = string.Empty;
         [Required (ErrorMessage = "El resumen es requerido")]
         [MinLength(20, ErrorMessage = "La longitud minima es 20 caracteres")]
-
-        public string resumen { get; set; } = null!;
-
+        public string resumen { get; set; } = string.Empty;
+        [Required(ErrorMessage ="El tipo de libro es obligatorio")]
+        public string tipoLibro { get; set; } = string.Empty;
     }
 }
